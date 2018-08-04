@@ -3,6 +3,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <GridPane fx:controller="com.sda.controler.ChatWindowControler"
           xmlns:fx="http://javafx.com/fxml" alignment="center"
           hgap="5" vgap="5">
@@ -15,5 +17,28 @@
                            maxWidth="Infinity" hgrow="ALWAYS">
         </ColumnConstraints>
     </columnConstraints>
+
+    <Button fx:id="disconnectButton" text="Disconnect"
+            prefWidth="100" prefHeight="40" defaultButton="true"
+            GridPane.columnIndex="0" GridPane.rowIndex="0"
+            GridPane.columnSpan="1" GridPane.rowSpan="1"
+            GridPane.halignment="CENTER"
+            onAction="#handleDisconnectButtonAction">
+        <GridPane.margin>
+            <Insets top="10" right="0" bottom="10" left="0"></Insets>
+        </GridPane.margin>
+    </Button>
+
+    <!-- Add Text Field -->
+    <TextField fx:id="chatMessageField"  minHeight="180.0" maxWidth="300.0"
+               GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <!-- Add Text Field -->
+    <TextField fx:id="chatUsersField"  minHeight="180.0" maxWidth="300.0"
+               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <!-- Add Text Field -->
+    <TextField fx:id="chatAddMessageField" minHeight="40" maxWidth="400"
+               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
 </GridPane>

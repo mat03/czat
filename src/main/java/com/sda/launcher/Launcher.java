@@ -19,9 +19,9 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent loggin = FXMLLoader.load(getClass().getResource("/fxml/LoginWindow.fxml"));
+        Parent loggin = FXMLLoader.load(getClass().getResource("/fxml/ChatWindow.fxml"));
         primaryStage.setTitle("Anonymous");
-        primaryStage.setScene(new Scene(loggin, 400, 100));
+        primaryStage.setScene(new Scene(loggin, 400, 1000));
         primaryStage.show();
     }
 }
