@@ -31,11 +31,13 @@
 
     <!-- Add Text Field -->
     <TextField fx:id="chatMessageField"  minHeight="180.0" maxWidth="300.0"
-               GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+               GridPane.columnIndex="0" GridPane.rowIndex="1"
+               editable="false"/>
 
     <!-- Add Text Field -->
     <TextField fx:id="chatUsersField"  minHeight="180.0" maxWidth="400.0"
-               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+               GridPane.columnIndex="1" GridPane.rowIndex="1"
+               editable="false"/>
 
     <!-- Add Text Field -->
     <TextField fx:id="chatAddMessageField" minHeight="40" maxWidth="400"
