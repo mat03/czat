@@ -17,7 +17,7 @@ public class Launcher extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent loggin = FXMLLoader.load(getClass().getResource("/fxml/LoginWindow.fxml"));
         primaryStage.setTitle("Anonymous");
-        primaryStage.setScene(new Scene(loggin, 400, 1000));
+        primaryStage.setScene(new Scene(loggin, 400, 100));
         primaryStage.show();
     }
 }
