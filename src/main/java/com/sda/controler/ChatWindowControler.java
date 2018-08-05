@@ -1,5 +1,7 @@
 package com.sda.controler;
 
+import com.sda.client.Client;
+import com.sda.client.ClientConnect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ChatWindowControler {
+    private final ClientConnect client = Client.getInstance();
+
     @FXML
     private Button loginButton, disconnectButton;
 
@@ -33,5 +37,9 @@ public class ChatWindowControler {
         Scene scene = new Scene(root, 400, 100);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void handleAddMessageAction(ActionEvent actionEvent) {
+
     }
 }

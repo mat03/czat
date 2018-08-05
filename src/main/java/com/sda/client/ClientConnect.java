@@ -1,5 +1,7 @@
 package com.sda.client;
 
+import com.sda.message.Message;
+
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
@@ -24,7 +26,11 @@ public class ClientConnect {
         }
     }
 
+    public void addNewUser(String userName) {
+        threadService.sendMessage(Message.NEW_USER + userName);
+    }
+
     public void sendMessage(String message) {
-        threadService.sendMessage(message);
+        threadService.sendMessage(Message.MESSAGE + message);
     }
 }

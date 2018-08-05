@@ -27,7 +27,7 @@ public class ClientThreadService implements Runnable {
             String message;
             while (running) {
                 if ((message = reader.readLine()) != null) {
-                    System.out.println(message);
+                    System.out.println("R: "+ message);
 
                 }
             }

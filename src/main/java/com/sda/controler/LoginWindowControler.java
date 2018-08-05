@@ -37,10 +37,11 @@ public class LoginWindowControler {
         Scene scene = new Scene(root, 600, 400);
         stage.setScene(scene);
         stage.show();
+        String loginName = loginNameField.getText();
 
-        if(loginNameField.getText().isEmpty() == false) {
+        if(loginName.isEmpty() == false) {
 
-            client.sendMessage(loginNameField.getText());
+            client.addNewUser(loginName);
         }
 
 

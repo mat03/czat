@@ -25,6 +25,7 @@ public class ServerThreadService implements Runnable{
             while (running) {
                 String message;
                 if((message = reader.readLine()) != null) {
+                    System.out.println("S:" + message);
                     for (Socket s: ChatServer.sockets) {
                         PrintWriter clientWrite = new PrintWriter(s.getOutputStream());
                         clientWrite.println(message);
