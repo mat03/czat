@@ -25,9 +25,16 @@ public class LoginWindowControler {
     public void handleloginButtonAction(ActionEvent actionEvent) throws IOException {
         Stage stage;
         Parent root;
+        String userName = loginNameField.getText();
+
+        if(userName.isEmpty() == false) {
+
+            client.addNewUser(userName);
+        }
 
         if(actionEvent.getSource() == loginButton) {
             stage = (Stage) loginButton.getScene().getWindow();
+            stage.setTitle(userName);
             root = FXMLLoader.load(getClass().getResource("/fxml/ChatWindow.fxml"));
         } else {
             stage = (Stage) disconnectButton.getScene().getWindow();
@@ -37,13 +44,6 @@ public class LoginWindowControler {
         Scene scene = new Scene(root, 600, 400);
         stage.setScene(scene);
         stage.show();
-        String loginName = loginNameField.getText();
-
-        if(loginName.isEmpty() == false) {
-
-            client.addNewUser(loginName);
-        }
-
 
     }
 }

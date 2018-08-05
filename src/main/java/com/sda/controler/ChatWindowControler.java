@@ -39,7 +39,11 @@ public class ChatWindowControler {
         stage.show();
     }
 
-    public void handleAddMessageAction(ActionEvent actionEvent) {
-
+    public void handleAddMessageAction(ActionEvent actionEvent) throws IOException {
+        String newMessage = chatAddMessageField.getText();
+        if(newMessage.isEmpty() == false) {
+            client.sendMessage(newMessage);
+            chatAddMessageField.clear();
+        }
     }
 }

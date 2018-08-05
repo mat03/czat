@@ -42,6 +42,6 @@
     <!-- Add Text Field -->
     <TextField fx:id="chatAddMessageField" minHeight="40" maxWidth="400"
                GridPane.columnIndex="1" GridPane.rowIndex="2"
-               onAction="#handleAddMessageAction">/>
+               onAction="#handleAddMessageAction"/>
 
 </GridPane>
