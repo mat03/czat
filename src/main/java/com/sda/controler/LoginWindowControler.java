@@ -1,5 +1,6 @@
 package com.sda.controler;
 
+import com.sda.persistance.ClientConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginWindowControler {
+    private static final ClientConnection clientConnection = new ClientConnection();
     @FXML
     private TextField loginNameField;
 
@@ -34,8 +36,9 @@ public class LoginWindowControler {
         stage.setScene(scene);
         stage.show();
 
-        if(loginNameField.getText().isEmpty()) {
+        if(loginNameField.getText().isEmpty() == false) {
 
+            clientConnection.addNewUser(loginNameField.getText());
         }
 
 

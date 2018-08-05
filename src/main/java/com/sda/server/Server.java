@@ -1,5 +1,7 @@
 package com.sda.server;
 
+import com.sda.message.Message;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -31,6 +33,19 @@ public class Server {
             //Odczyt od klienta
             String line = reader.readLine();
             System.out.println("Received: " + line);
+            String messageType = line.substring(0,4);
+
+            switch (messageType) {
+                case Message.MESSAGE :
+                    printWriter.println(Message.MESSAGE_RESPONS);
+                    printWriter.flush();
+                    break;
+
+                case Message.NEW_USER :
+                    printWriter.println(Message.MESSAGE_RESPONS);
+                    printWriter.flush();
+                    break;
+            }
             //Uspij na 6 sek. Symulacja obliczeń
             Thread.sleep(SLEEP_TIME);
             //Odpowiedź do klienta
