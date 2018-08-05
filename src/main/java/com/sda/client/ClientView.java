@@ -1,6 +1,6 @@
-package com.sda.launcher;
+package com.sda.client;
 
-import com.sda.client.Client;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,15 +8,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.Socket;
+import java.util.Scanner;
 
-public class Launcher extends Application {
+public class ClientView extends Application{
+    private static final Scanner SCANNER = new Scanner(System.in);
+    private static final Integer PORT = 8434;
+    private static final String HOSTNAME = "localhost";
 
-    public static void main(String[] args) throws IOException {
-        Thread thread = new Thread(new Client());
-        thread.start();
+
+    public static void main(String[] args) {
         launch(args);
-    }
+        ClientConnect client = Client.getInstance();
 
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
