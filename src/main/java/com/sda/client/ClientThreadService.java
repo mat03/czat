@@ -1,5 +1,8 @@
 package com.sda.client;
 
+import javafx.event.Event;
+import javafx.event.EventType;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,12 +15,14 @@ public class ClientThreadService implements Runnable {
     private PrintWriter writer;
     private BufferedReader reader;
     private ArrayList<String> readFromServer;
+    private EventType<ClientEvent> options;
 
     public ClientThreadService(Socket socket) throws IOException {
         this.socket = socket;
         writer = new PrintWriter(socket.getOutputStream());
         reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         readFromServer = new ArrayList();
+        options = new EventType<>("options");
     }
 
     public boolean isReadArrayEmpty() {
@@ -40,7 +45,7 @@ public class ClientThreadService implements Runnable {
                 if ((message = reader.readLine()) != null) {
                     readFromServer.add(message);
                     System.out.println("R: "+ message);
-
+                   Event event = new ClientEvent(message);
                 }
             }
         } catch (IOException e) {
