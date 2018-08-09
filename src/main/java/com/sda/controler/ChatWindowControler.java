@@ -2,8 +2,6 @@ package com.sda.controler;
 
 import com.sda.client.Client;
 import com.sda.client.ClientConnect;
-import com.sda.client.CustomEvent;
-import com.sda.client.MyCustomEventHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

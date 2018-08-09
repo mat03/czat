@@ -1,6 +1,5 @@
 package com.sda.client;
 
-import javafx.event.Event;
 import javafx.event.EventType;
 
 public class ClientEvent extends CustomEvent {
