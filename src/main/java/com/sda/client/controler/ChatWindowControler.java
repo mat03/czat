@@ -1,4 +1,4 @@
-package com.sda.controler;
+package com.sda.client.controler;
 
 import com.sda.client.Client;
 import com.sda.client.ClientConnect;
