@@ -1,6 +1,9 @@
 package com.sda.message;
 
-public class Message {
+public class Constant {
+    private static final Integer PORT = 8434;
+    private static final String HOSTNAME = "localhost";
+
     public static final String NEW_USER = "@NU@";
     public static final String MESSAGE = "@ME@";
 

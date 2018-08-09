@@ -1,6 +1,6 @@
 package com.sda.client.controler;
 
-import com.sda.client.Client;
+import com.sda.client.ClientSingleton;
 import com.sda.client.ClientConnect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginWindowControler {
-    private final ClientConnect client = Client.getInstance();
+    private final ClientConnect client = ClientSingleton.getInstance();
 
     @FXML
     private TextField loginNameField;
@@ -35,10 +35,10 @@ public class LoginWindowControler {
         if(actionEvent.getSource() == loginButton) {
             stage = (Stage) loginButton.getScene().getWindow();
             stage.setTitle(userName);
-            root = FXMLLoader.load(getClass().getResource("/fxml/ChatWindow.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/clientfxml/ChatWindow.fxml"));
         } else {
             stage = (Stage) disconnectButton.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("/fxml/LoginWindow.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/clientfxml/LoginWindow.fxml"));
         }
 
         Scene scene = new Scene(root, 600, 400);

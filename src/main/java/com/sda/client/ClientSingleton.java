@@ -1,6 +1,6 @@
 package com.sda.client;
 
-public class Client {
+public class ClientSingleton {
     private static ClientConnect clientConnect = null;
 
     public static ClientConnect getInstance() {

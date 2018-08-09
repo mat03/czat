@@ -1,6 +1,6 @@
 package com.sda.client.controler;
 
-import com.sda.client.Client;
+import com.sda.client.ClientSingleton;
 import com.sda.client.ClientConnect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ChatWindowControler {
-    private final ClientConnect client = Client.getInstance();
+    private final ClientConnect client = ClientSingleton.getInstance();
 
     @FXML
     private Button loginButton, disconnectButton;
@@ -28,10 +28,10 @@ public class ChatWindowControler {
 
         if(actionEvent.getSource() == disconnectButton) {
             stage = (Stage) disconnectButton.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("/fxml/LoginWindow.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/clientfxml/LoginWindow.fxml"));
         } else {
             stage = (Stage) loginButton.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("/fxml/ChatWindow.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/clientfxml/ChatWindow.fxml"));
         }
 
         Scene scene = new Scene(root, 400, 100);
