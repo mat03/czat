@@ -1,5 +1,6 @@
 package com.sda.client;
 
+import com.sda.client.thread.ClientThreadService;
 import com.sda.message.Constant;
 
 import java.io.IOException;

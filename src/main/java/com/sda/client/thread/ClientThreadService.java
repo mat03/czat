@@ -1,7 +1,4 @@
-package com.sda.client;
-
-import javafx.event.Event;
-import javafx.event.EventType;
+package com.sda.client.thread;
 
 import java.io.BufferedReader;
 import java.io.IOException;
